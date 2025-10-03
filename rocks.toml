@@ -1,0 +1,91 @@
+# This is your rocks.nvim plugins declaration file.
+# Here is a small yet pretty detailed example on how to use it:
+#
+# [plugins]
+# nvim-treesitter = "semver_version"  # e.g. "1.0.0"
+
+# List of non-Neovim rocks.
+# This includes things like `toml` or other lua packages.
+[rocks]
+
+# List of Neovim plugins to install alongside their versions.
+# If the plugin name contains a dot then you must add quotes to the key name!
+[plugins]
+"rocks.nvim" = "2.46.1"
+"rocks-git.nvim" = "2.5.6"
+"rocks-config.nvim" = "3.1.2"
+"rocks-lazy.nvim" = "1.2.2"
+"nvim-lspconfig" = "2.5.0"
+"mason-lspconfig.nvim" = "2.1.0"
+"mini.pairs" = "0.16.0"
+"mini.icons" = "0.16.0"
+"which-key.nvim" = "3.17.0"
+"nui.nvim" = "0.4.0"
+"volt" = "scm"
+"vim-startuptime"= "4.5.0"
+
+[config]
+plugins_dir = "plugins/"
+auto_setup = true 
+
+[plugins."mason.nvim"]
+git = "https://github.com/mason-org/mason.nvim.git"
+opt = true
+cmd = "Mason"
+build = ":MasonUpdate"
+
+[plugins."conform.nvim"]
+git = "https://github.com/stevearc/conform.nvim.git"
+opt = true
+event = "BufWritePre"
+
+[plugins."nvim-treesitter" ]
+git = "https://github.com/nvim-treesitter/nvim-treesitter.git"
+rev = "v0.10.0"
+branch = "master"
+build = ":TSUpdate"
+
+[plugins."blink.cmp" ]
+git = "https://github.com/Saghen/blink.cmp"
+rev = "v1.7.0"
+build = "cargo build --release"
+opt = true
+event = [ "InsertEnter", "CmdlineEnter"]
+
+[plugins."tiny-inline-diagnostic.nvim" ]
+git = "https://github.com/rachartier/tiny-inline-diagnostic.nvim"
+rev = "6d8dc61a9c4077d9ec62a9c8998506dcd2a5b6af"
+opt = true
+
+[plugins."noice.nvim"]
+git = "https://github.com/folke/noice.nvim.git"
+rev = "v4.10.0"
+
+[plugins."base46"]
+git = "https://github.com/gszsyu/base46.git"
+rev = "db58475d3fd2a16f9b1467d6895e3c4c195ed7dd"
+
+[plugins."nvui"]
+git = "https://github.com/gszsyu/ui.git"
+rev = "03b9718140375e7f3f5e4f3e04bc2b6c907440ec"
+
+[plugins."nvim-tree"]
+git = "https://github.com/nvim-tree/nvim-tree.lua.git"
+rev = "v1.14"
+
+[plugins."plenary.nvim"]
+git = "https://github.com/nvim-lua/plenary.nvim.git"
+rev = "v0.1.4"
+
+[plugins."nvim-web-devicons"]
+git = "https://github.com/nvim-tree/nvim-web-devicons.git"
+rev = "v0.100"
+
+[plugins."telescope.nvim"]
+git = "https://github.com/nvim-telescope/telescope.nvim.git"
+rev = "0.1.8"
+
+[plugins."luasnip"]
+git = "https://github.com/L3MON4D3/LuaSnip.git"
+rev = "v2.4.0"
+build = "make install_jsregexp"
