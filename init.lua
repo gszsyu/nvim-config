@@ -1,10 +1,16 @@
-require("autocommand")
-require("basicsetting")
-require("mapping")
+vim.o.number = true
+vim.o.laststatus = 3
+vim.o.autoread = true
 
-if pcall(require, "mason") then
-	require("mason").setup()
-	require("rocks-config")
-else
-	vim.cmd("Rocks sync")
-end
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+vim.opt.termguicolors = true
+vim.opt.clipboard:append({ "unnamed", "unnamedplus" })
+
+vim.cmd('nnoremap x "_x')
+vim.cmd('nnoremap d "_d')
+vim.cmd('nnoremap D "_D')
+vim.cmd('vnoremap d "_d')
+
+require("init")

@@ -1,0 +1,12 @@
+require("plugins.nvim-treesitter")
+require("mason").setup()
+require("plugins.mason-lspconfig")
+require("plugins.mini-pairs")
+require("plugins.nvim-tree")
+require("plugins.tiny-inline-diagnostic")
+require("plugins.conform")
+require("plugins.noice")
+require("plugins.nvui")
+require("plugins.base46")
+require("plugins.blink-cmp")
+-- Possible to immediately execute code which depends on the added plugin

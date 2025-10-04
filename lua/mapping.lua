@@ -20,7 +20,7 @@ map("n", "<leader>nf", ":noh", { desc = "Search text"})
 
 map("n", "<leader>t", ":NvimTreeFocus<cr>", { silent = true, noremap = true, desc = "NvimTreeFocus" })
 
-if require("nvconfig").ui.tabufline.enabled then
+if require("chadrc").ui.tabufline.enabled then
 	map("n", "<leader>b", "<cmd>enew<CR>", { desc = "buffer new" })
 
 	map("n", "<tab>", function()

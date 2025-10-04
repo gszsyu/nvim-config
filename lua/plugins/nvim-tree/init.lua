@@ -25,7 +25,7 @@ require("nvim-tree").setup({
 	},
 })
 
-local treeutils = require("plugins.nvimTree.treeutils")
+local treeutils = require("plugins.nvim-tree.treeutils")
 
 vim.keymap.set("n", "<c-f>", treeutils.launch_find_files, { desc = "Launch Find Files" })
 vim.keymap.set("n", "<c-g>", treeutils.launch_live_grep, { desc = "Launch Live Grep" })
