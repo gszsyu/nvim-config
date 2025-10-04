@@ -1,12 +1,12 @@
 return {
 	base46 = {
-		theme = "aylin", -- default theme
+		theme = "decay", -- default theme
 		hl_add = {},
 		hl_override = {},
 		integrations = {},
 		changed_themes = {},
 		transparency = false,
-		theme_toggle = { "aylin", "one_light" },
+		theme_toggle = { "decay", "one_light" },
 	},
 
 	ui = {
@@ -36,7 +36,7 @@ return {
 			lazyload = true,
 			order = { "treeOffset", "buffers", "tabs", "btns" },
 			modules = nil,
-			bufwidth = 21,
+			bufwidth = 20,
 		},
 	},
 

@@ -2,9 +2,11 @@ require("mason-lspconfig").setup({
 	ensure_installed = { "rust_analyzer", "lua_ls" },
 })
 
+local lsp_config = vim.lsp.config
+
 vim.lsp.enable("rust_analyzer", "lua_ls")
 
-vim.lsp.config("lua_ls", {
+lsp_config("lua_ls", {
 	on_init = function(client)
 		if client.workspace_folders then
 			local path = client.workspace_folders[1].name

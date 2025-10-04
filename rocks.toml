@@ -24,10 +24,6 @@
 "volt" = "scm"
 "vim-startuptime" = "4.5.0"
 
-[config]
-plugins_dir = "plugins/"
-auto_setup = true 
-
 [plugins."mason.nvim"]
 git = "https://github.com/mason-org/mason.nvim.git"
 opt = true
@@ -38,7 +34,7 @@ build = ":MasonUpdate"
 git = "https://github.com/stevearc/conform.nvim.git"
 opt = true
 pin = true
-event = [ "BufWritePre" ]
+event = ["BufWritePre"]
 
 [plugins."nvim-treesitter"]
 git = "https://github.com/nvim-treesitter/nvim-treesitter.git"
@@ -52,14 +48,14 @@ rev = "v1.7.0"
 build = "cargo build --release"
 opt = true
 pin = true
-event = [ "InsertEnter", "CmdlineEnter" ]
+event = ["InsertEnter", "CmdlineEnter"]
 
-[plugins."tiny-inline-diagnostic.nvim" ]
+[plugins."tiny-inline-diagnostic.nvim"]
 git = "https://github.com/rachartier/tiny-inline-diagnostic.nvim"
 rev = "6d8dc61a9c4077d9ec62a9c8998506dcd2a5b6af"
 opt = true
 pin = true
-event = [ "BufReadPre" ]
+event = ["BufReadPre"]
 
 [plugins."luasnip"]
 git = "https://github.com/L3MON4D3/LuaSnip.git"
@@ -67,7 +63,7 @@ rev = "v2.4.0"
 build = "make install_jsregexp"
 opt = true
 pin = true
-event = [ "InsertEnter", "CmdlineEnter" ]
+event = ["InsertEnter", "CmdlineEnter"]
 
 [plugins."noice.nvim"]
 git = "https://github.com/folke/noice.nvim.git"
@@ -98,3 +94,6 @@ git = "https://github.com/nvim-telescope/telescope.nvim.git"
 rev = "0.1.8"
 opt = true
 
+[config]
+plugins_dir = "plugins/"
+auto_setup = true

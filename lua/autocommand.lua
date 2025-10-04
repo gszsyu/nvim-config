@@ -33,7 +33,7 @@ end
 if not pcall(require, "rocks") then
 	local rocks_location = vim.fs.joinpath(vim.fn.stdpath("cache") --[[@as string]], "rocks.nvim")
 
-	if not vim.uv.fs_stat(rocks_location) then 
+	if not vim.uv.fs_stat(rocks_location) then
 		-- Pull down rocks.nvim
 		local url = "https://github.com/lumen-oss/rocks.nvim"
 		vim.fn.system({ "git", "clone", "--filter=blob:none", url, rocks_location })
@@ -45,4 +45,5 @@ if not pcall(require, "rocks") then
 	vim.cmd.source(vim.fs.joinpath(rocks_location, "bootstrap.lua"))
 
 	vim.fn.delete(rocks_location, "rf")
+	vim.cmd("Rocks sync")
 end

@@ -2,6 +2,9 @@ require("autocommand")
 require("basicsetting")
 require("mapping")
 
-require("mason").setup()
-
-require("rocks-config")
+if pcall(require, "mason") then
+	require("mason").setup()
+	require("rocks-config")
+else
+	vim.cmd("Rocks sync")
+end
