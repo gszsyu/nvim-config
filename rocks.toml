@@ -22,7 +22,7 @@
 "which-key.nvim" = "3.17.0"
 "nui.nvim" = "0.4.0"
 "volt" = "scm"
-"vim-startuptime"= "4.5.0"
+"vim-startuptime" = "4.5.0"
 
 [config]
 plugins_dir = "plugins/"
@@ -31,31 +31,43 @@ auto_setup = true
 [plugins."mason.nvim"]
 git = "https://github.com/mason-org/mason.nvim.git"
 opt = true
-cmd = "Mason"
+pin = true
 build = ":MasonUpdate"
 
 [plugins."conform.nvim"]
 git = "https://github.com/stevearc/conform.nvim.git"
 opt = true
-event = "BufWritePre"
+pin = true
+event = [ "BufWritePre" ]
 
-[plugins."nvim-treesitter" ]
+[plugins."nvim-treesitter"]
 git = "https://github.com/nvim-treesitter/nvim-treesitter.git"
 rev = "v0.10.0"
 branch = "master"
 build = ":TSUpdate"
 
-[plugins."blink.cmp" ]
+[plugins."blink.cmp"]
 git = "https://github.com/Saghen/blink.cmp"
 rev = "v1.7.0"
 build = "cargo build --release"
 opt = true
-event = [ "InsertEnter", "CmdlineEnter"]
+pin = true
+event = [ "InsertEnter", "CmdlineEnter" ]
 
 [plugins."tiny-inline-diagnostic.nvim" ]
 git = "https://github.com/rachartier/tiny-inline-diagnostic.nvim"
 rev = "6d8dc61a9c4077d9ec62a9c8998506dcd2a5b6af"
 opt = true
+pin = true
+event = [ "BufReadPre" ]
+
+[plugins."luasnip"]
+git = "https://github.com/L3MON4D3/LuaSnip.git"
+rev = "v2.4.0"
+build = "make install_jsregexp"
+opt = true
+pin = true
+event = [ "InsertEnter", "CmdlineEnter" ]
 
 [plugins."noice.nvim"]
 git = "https://github.com/folke/noice.nvim.git"
@@ -84,8 +96,5 @@ rev = "v0.100"
 [plugins."telescope.nvim"]
 git = "https://github.com/nvim-telescope/telescope.nvim.git"
 rev = "0.1.8"
+opt = true
 
-[plugins."luasnip"]
-git = "https://github.com/L3MON4D3/LuaSnip.git"
-rev = "v2.4.0"
-build = "make install_jsregexp"

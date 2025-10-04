@@ -28,11 +28,11 @@ local options = {
 		-- ["<C-p>"] = { "select_prev", "fallback_to_mappings" },
 		-- ["<C-n>"] = { "select_next", "fallback_to_mappings" },
 
-		["<C-b>"] = { "scroll_documentation_up", "fallback" },
-		["<C-f>"] = { "scroll_documentation_down", "fallback" },
+		["<C-u>"] = { "scroll_documentation_up", "fallback" },
+		["<C-d>"] = { "scroll_documentation_down", "fallback" },
 
-		-- ["<Tab>"] = { "snippet_forward", "fallback" },
-		-- ["<S-Tab>"] = { "snippet_backward", "fallback" },
+		["<Tab>"] = { "snippet_forward", "fallback" },
+		["<S-tab>"] = { "snippet_backward", "fallback" },
 
 		["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
 	},
@@ -44,7 +44,16 @@ local options = {
 	},
 
 	-- (Default) Only show the documentation popup when manually triggered
-	completion = { documentation = { auto_show = false } },
+	completion = {
+		documentation = { auto_show = false },
+
+		list = {
+			selection = {
+				preselect = true,
+				auto_insert = false,
+			},
+		},
+	},
 
 	-- Default list of enabled providers defined so that you can extend it
 	-- elsewhere in your config, without redefining it, due to `opts_extend`
@@ -66,21 +75,19 @@ local options = {
 			["<Esc>"] = {},
 
 			["<C-e>"] = { "hide", "fallback" },
+
+			["<cr>"] = { "accept", "fallback" },
 		},
-		completion = { menu = { auto_show = true } },
-	},
-
-	sources = {
-		providers = {
-
-			cmdline = {
-				min_keyword_length = function(ctx)
-					-- when typing a command, only show when the keyword is 3 characters or longer
-					if ctx.mode == "cmdline" and string.find(ctx.line, " ") == nil then
-						return 3
-					end
-					return 0
-				end,
+		completion = {
+			menu = { auto_show = true },
+			ghost_text = { enabled = true },
+			list = {
+				selection = {
+					-- When `true`, will automatically select the first item in the completion list
+					preselect = false,
+					-- When `true`, inserts the completion item automatically when selecting it
+					auto_insert = false,
+				},
 			},
 		},
 	},
