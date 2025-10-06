@@ -14,5 +14,7 @@ require("plugins.nvim-hlslens")
 require("plugins.edgy")
 require("plugins.mini-ai")
 require("plugins.toggleterm")
+require("plugins.luasnip")
+require("plugins.bigfile")
 
 -- Possible to immediately execute code which depends on the added plugin

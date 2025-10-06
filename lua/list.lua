@@ -2,6 +2,9 @@
 
 local add = MiniDeps.add
 
+add({ source = "nvim-mini/mini.deps",
+	name = 'mini.deps', checkout = 'stable' })
+
 add({
 	source = "gszsyu/base46",
 })
@@ -33,6 +36,7 @@ add({
 
 add({
 	source = "L3MON4D3/LuaSnip",
+	depends = { "rafamadriz/friendly-snippets" },
 })
 
 add({
@@ -126,6 +130,10 @@ add({
 
 add({
 	source = "nvim-mini/mini.animate",
+})
+
+add({
+	source = "LunarVim/bigfile.nvim",
 })
 
 require("plugins")

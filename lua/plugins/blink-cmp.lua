@@ -22,10 +22,10 @@ local options = {
 		["<Esc>"] = { "hide", "fallback" },
 		["<cr>"] = { "select_and_accept", "fallback" },
 
-		["<S-Tab>"] = { "select_prev", "fallback" },
 		["<Up>"] = { "select_prev", "fallback" },
+		["<Tab-S>"] = { "select_prev", "fallback" },
 		["<tab>"] = { "select_next", "fallback" },
-		["<Down>"] = { "select_next", "fallback" },
+		-- ["<Down>"] = { "select_next", "fallback" },
 		-- ["<C-p>"] = { "select_prev", "fallback_to_mappings" },
 		-- ["<C-n>"] = { "select_next", "fallback_to_mappings" },
 
@@ -94,6 +94,6 @@ local options = {
 	},
 }
 
-local opts = vim.tbl_deep_extend("keep", options, require("nvchad.blink.config"))
+local opts = vim.tbl_deep_extend("force", options, require("nvchad.blink.config"))
 
 require("blink-cmp").setup(opts)

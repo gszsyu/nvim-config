@@ -8,7 +8,6 @@ vim.opt.fillchars = {
 }
 vim.o.foldcolumn = "auto:9"
 vim.o.foldlevel = 99
-vim.o.foldmethod = "indent"
 vim.o.foldenable = true
 
 -- Using ufo provider need remap `zR` and `zM`. If Neovim is 0.6.1, remap yourself
