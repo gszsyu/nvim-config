@@ -15,8 +15,7 @@ map("n", "<C-l>", "<C-w>l", { desc = "Switch window right" })
 map("n", "<C-j>", "<C-w>j", { desc = "Switch window down" })
 map("n", "<C-k>", "<C-w>k", { desc = "Switch window up" })
 
-map("n", "<leader>f", "/", { desc = "Search text"})
-map("n", "<leader>nf", ":noh", { desc = "Search text"})
+map("n", "<leader>f", "/", { desc = "Search text" })
 
 map("n", "<leader>t", ":NvimTreeFocus<cr>", { silent = true, noremap = true, desc = "NvimTreeFocus" })
 

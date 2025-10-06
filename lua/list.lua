@@ -102,4 +102,30 @@ add({
 	source = "nvim-tree/nvim-web-devicons",
 })
 
+add({
+	source = "kevinhwang91/nvim-ufo",
+	depends = { "kevinhwang91/promise-async" },
+})
+
+add({
+	source = "kevinhwang91/nvim-hlslens",
+})
+
+add({
+	source = "nvim-mini/mini.ai",
+	name = "mini-ai",
+})
+
+add({
+	source = "folke/edgy.nvim",
+})
+
+add({
+	source = "akinsho/toggleterm.nvim",
+})
+
+add({
+	source = "nvim-mini/mini.animate",
+})
+
 require("plugins")

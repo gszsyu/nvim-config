@@ -1,5 +1,5 @@
 require("plugins.nvim-treesitter")
-require("mason").setup()
+require("plugins.mason")
 require("plugins.mason-lspconfig")
 require("plugins.mini-pairs")
 require("plugins.nvim-tree")
@@ -9,4 +9,10 @@ require("plugins.noice")
 require("plugins.nvui")
 require("plugins.base46")
 require("plugins.blink-cmp")
+require("plugins.nvim-ufo")
+require("plugins.nvim-hlslens")
+require("plugins.edgy")
+require("plugins.mini-ai")
+require("plugins.toggleterm")
+
 -- Possible to immediately execute code which depends on the added plugin

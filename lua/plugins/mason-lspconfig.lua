@@ -1,10 +1,10 @@
 require("mason-lspconfig").setup({
-	ensure_installed = { "rust_analyzer", "lua_ls" },
+	ensure_installed = { "rust_analyzer", "lua_ls", "clangd" },
 })
 
 local lsp_config = vim.lsp.config
 
-vim.lsp.enable("rust_analyzer", "lua_ls")
+vim.lsp.enable("rust_analyzer", "lua_ls", "clnagd")
 
 lsp_config("lua_ls", {
 	on_init = function(client)

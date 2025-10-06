@@ -21,4 +21,4 @@ vim.fs.joinpath(path_package, "pack", "deps", "opts", "*")
 require("mini.deps").setup({ path = { package = path_package } })
 
 require("mapping")
-require("index")
+require("list")

@@ -2,6 +2,7 @@ vim.o.number = true
 vim.o.laststatus = 3
 vim.o.autoread = true
 
+vim.opt.foldmethod = "indent"
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
@@ -13,4 +14,4 @@ vim.cmd('nnoremap d "_d')
 vim.cmd('nnoremap D "_D')
 vim.cmd('vnoremap d "_d')
 
-require("init")
+require("initialize")
