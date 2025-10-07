@@ -46,7 +46,7 @@ local options = {
 
 	-- (Default) Only show the documentation popup when manually triggered
 	completion = {
-		documentation = { auto_show = false },
+		documentation = { auto_show = false, auto_show_delay_ms = 500 },
 
 		list = {
 			selection = {

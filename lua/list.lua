@@ -2,11 +2,30 @@
 
 local add = MiniDeps.add
 
-add({ source = "nvim-mini/mini.deps",
-	name = 'mini.deps', checkout = 'stable' })
+add({
+	source = "nvim-mini/mini.deps",
+	name = "mini.deps",
+	checkout = "main",
+	hooks = {
+		post_checkout = function()
+			local mini_path = vim.fn.stdpath("data") .. "/site/pack/deps/opt/mini.deps"
+			local mini_start = vim.fn.stdpath("data") .. "/site/pack/deps/start/"
+			local cmd = { "mv", mini_path, mini_start }
+			vim.fn.system(cmd)
+		end,
+	},
+})
 
 add({
 	source = "gszsyu/base46",
+	hooks = {
+		post_checkout = function(params)
+			require("base46").load_all_highlights()
+		end,
+		post_inzstall = function(params)
+			require("base46").load_all_highlights()
+		end,
+	},
 })
 
 add({
@@ -32,6 +51,9 @@ add({
 
 add({
 	source = "mason-org/mason.nvim",
+	post_checkout = function()
+		vim.cmd("MasonInstallAll")
+	end,
 })
 
 add({
@@ -45,6 +67,7 @@ add({
 
 add({
 	source = "Saghen/blink.cmp",
+	checkout = "main",
 	hooks = {
 		post_checkout = function(params)
 			vim.system({ "cargo", "build", "--release" }, { cwd = params.path }):wait()
@@ -109,10 +132,6 @@ add({
 add({
 	source = "kevinhwang91/nvim-ufo",
 	depends = { "kevinhwang91/promise-async" },
-})
-
-add({
-	source = "kevinhwang91/nvim-hlslens",
 })
 
 add({

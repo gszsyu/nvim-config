@@ -15,3 +15,4 @@ vim.cmd('nnoremap D "_D')
 vim.cmd('vnoremap d "_d')
 
 require("initialize")
+require("mapping")
