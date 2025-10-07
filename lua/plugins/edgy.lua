@@ -15,6 +15,14 @@ require("edgy").setup({
 				return vim.api.nvim_win_get_config(win).relative == ""
 			end,
 		},
+
+		{
+			ft = "messages",
+			size = { height = 0.4 },
+			filter = function(buf, win)
+				return vim.api.nvim_win_get_config(win).relative == ""
+			end,
+		},
 	}, -- @type (Edgy.View.Opts|string)[]
 	right = {}, -- @type (Edgy.View.Opts|string)[]
 	top = {}, -- @type (Edgy.View.Opts|string)[]

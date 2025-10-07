@@ -154,5 +154,9 @@ add({
 add({
 	source = "LunarVim/bigfile.nvim",
 })
+add({
+	source = "rcarriga/nvim-dap-ui",
+	depends = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+})
 
 require("plugins")

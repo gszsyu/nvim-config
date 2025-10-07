@@ -1,4 +1,5 @@
 return {
+
 	base46 = {
 		theme = "decay", -- default theme
 		hl_add = {},
