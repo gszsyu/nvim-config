@@ -14,9 +14,9 @@ require("plugins.edgy")
 require("plugins.mini-ai")
 require("plugins.toggleterm")
 require("plugins.luasnip")
-require("plugins.bigfile")
 require("nio")
 require("plugins.dap-ui")
 require("plugins.nvim-dap.init")
+require("plugins.nvim-dap-virtual-text")
 
 -- Possible to immediately execute code which depends on the added plugin

@@ -1,9 +1,12 @@
 local dap = require("dap")
 
-dap.adapters["rust-gdb"] = {
+-- lldb-dap
+dap.adapters.lldb = {
 	type = "executable",
-	command = "/Users/guozongyu/.cargo/bin/rust-gdb",
-	args = { "--interpreter=dap" },
+	command = "lldb-dap", -- adjust as needed, must be absolute path
+	name = "lldb",
 }
 
+dap.configurations.cpp = require("plugins.nvim-dap.cpp-dap")
+dap.configurations.c = dap.configurations.cpp
 dap.configurations.rust = require("plugins.nvim-dap.rust-dap")

@@ -22,7 +22,7 @@ add({
 		post_checkout = function(params)
 			require("base46").load_all_highlights()
 		end,
-		post_inzstall = function(params)
+		post_install = function(params)
 			require("base46").load_all_highlights()
 		end,
 	},
@@ -59,6 +59,14 @@ add({
 add({
 	source = "L3MON4D3/LuaSnip",
 	depends = { "rafamadriz/friendly-snippets" },
+	hooks = {
+		post_checkout = function(params)
+			vim.system({ "make", "install_jsregexp" }, { cwd = params.path }):wait()
+		end,
+		post_install = function(params)
+			vim.system({ "make", "install_jsregexp" }, { cwd = params.path }):wait()
+		end,
+	},
 })
 
 add({
@@ -152,11 +160,12 @@ add({
 })
 
 add({
-	source = "LunarVim/bigfile.nvim",
+	source = "mfussenegger/nvim-dap",
+	depends = { "rcarriga/nvim-dap-ui", "nvim-neotest/nvim-nio" },
 })
+
 add({
-	source = "rcarriga/nvim-dap-ui",
-	depends = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+	source = "theHamsta/nvim-dap-virtual-text",
 })
 
 require("plugins")

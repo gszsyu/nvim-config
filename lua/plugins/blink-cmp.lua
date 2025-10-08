@@ -1,4 +1,4 @@
-local options = {
+local blink = {
 	-- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
 	-- 'super-tab' for mappings similar to vscode (tab to accept)
 
@@ -19,8 +19,8 @@ local options = {
 		preset = "none",
 
 		["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
-		["<Esc>"] = { "hide", "fallback" },
-		["<cr>"] = { "select_and_accept", "fallback" },
+		["<C-e>"] = { "hide", "fallback" },
+		["<CR>"] = { "select_and_accept", "fallback" },
 
 		["<Up>"] = { "select_prev", "fallback" },
 		["<Tab-S>"] = { "select_prev", "fallback" },
@@ -94,6 +94,6 @@ local options = {
 	},
 }
 
-local opts = vim.tbl_deep_extend("force", options, require("nvchad.blink.config"))
+local opts = vim.tbl_deep_extend("force", blink, require("nvchad.blink.config"))
 
 require("blink-cmp").setup(opts)
