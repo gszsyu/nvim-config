@@ -2,19 +2,22 @@ return {
 
 	base46 = {
 		theme = "decay", -- default theme
+
 		hl_add = {},
 		hl_override = {},
 		integrations = {},
 		changed_themes = {},
 		transparency = false,
-		theme_toggle = { "decay", "one_light" },
+		theme_toggle = { "decay", "everblush" },
 	},
 
 	ui = {
 		cmp = {
 			icons_left = true, -- only for non-atom styles!
-			style = "atom_colored", -- default/flat_light/flat_dark/atom/atom_colored
-			abbr_maxwidth = 60,
+			style = "default", -- default/flat_light/flat_dark/atom/atom_colored
+
+			abbr_maxwidth = 120,
+
 			-- for tailwind, css lsp etc
 			format_colors = { lsp = true, icon = "󱓻" },
 		},
@@ -65,7 +68,7 @@ return {
 	mason = { pkgs = {}, skip = {} },
 
 	colorify = {
-		enabled = false,
+		enabled = true,
 		mode = "virtual", -- fg, bg, virtual
 		virt_text = "󱓻 ",
 		highlight = { hex = true, lspvars = true },

@@ -4,6 +4,7 @@ require("conform").setup({
 		-- You can customize some of the format options for the filetype (:help conform.format)
 		rust = { "rustfmt", lsp_format = "first" },
 		markdown = { "markdown-toc", lsp_format = "first" },
+		typst = { "typst", lsp_format = "first" },
 		tombi = { "tombi", lsp_format = "fallback" },
 		fixjson = { "fixjson", lsp_format = "fallback" },
 		clang_format = { "clang_format", lsp_format = "first" },

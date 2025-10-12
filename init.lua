@@ -1,14 +1,18 @@
 vim.o.number = true
 vim.o.laststatus = 3
 vim.o.autoread = true
+vim.o.winborder = "bold"
 
-vim.opt.foldmethod = "indent"
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.termguicolors = true
 vim.opt.clipboard:append({ "unnamed", "unnamedplus" })
 
+vim.cmd("nnoremap q: <nop>")
+vim.cmd("nnoremap Q <nop>")
+vim.cmd("vnoremap q: <nop>")
+vim.cmd("vnoremap Q <nop>")
 vim.cmd('nnoremap x "_x')
 vim.cmd('nnoremap d "_d')
 vim.cmd('nnoremap D "_D')

@@ -127,14 +127,11 @@ add({
 
 add({
 	source = "nvim-tree/nvim-tree.lua",
+	depends = { "nvim-tree/nvim-web-devicons" },
 })
 
 add({
 	source = "nvim-lua/plenary.nvim",
-})
-
-add({
-	source = "nvim-tree/nvim-web-devicons",
 })
 
 add({
@@ -166,6 +163,14 @@ add({
 
 add({
 	source = "theHamsta/nvim-dap-virtual-text",
+})
+
+add({
+	source = "chomosuke/typst-preview.nvim",
+})
+
+add({
+	source = "numToStr/Comment.nvim",
 })
 
 require("plugins")

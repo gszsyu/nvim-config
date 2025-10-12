@@ -15,6 +15,13 @@ map("n", "<C-l>", "<C-w>l", { desc = "Switch window right" })
 map("n", "<C-j>", "<C-w>j", { desc = "Switch window down" })
 map("n", "<C-k>", "<C-w>k", { desc = "Switch window up" })
 
+map(
+	"n",
+	"<leader>G",
+	"<S-g><C-u><C-f><S-g>",
+	{ desc = "Navigate to the end of the line and scroll down half the screen" }
+)
+
 local dap = require("dap")
 -- 设置断点（带条件）
 map("n", "<leader>dB", function()

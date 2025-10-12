@@ -24,16 +24,16 @@ local blink = {
 
 		["<Up>"] = { "select_prev", "fallback" },
 		["<Tab-S>"] = { "select_prev", "fallback" },
-		["<tab>"] = { "select_next", "fallback" },
-		-- ["<Down>"] = { "select_next", "fallback" },
+		["<Tab>"] = { "select_next", "fallback" },
+		["<Down>"] = { "select_next", "fallback" },
 		-- ["<C-p>"] = { "select_prev", "fallback_to_mappings" },
 		-- ["<C-n>"] = { "select_next", "fallback_to_mappings" },
 
 		["<C-u>"] = { "scroll_documentation_up", "fallback" },
 		["<C-d>"] = { "scroll_documentation_down", "fallback" },
 
-		["<Tab>"] = { "snippet_forward", "fallback" },
-		["<S-tab>"] = { "snippet_backward", "fallback" },
+		-- ["<Tab>"] = { "snippet_forward", "fallback" },
+		-- ["<S-tab>"] = { "snippet_backward", "fallback" },
 
 		["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
 	},
@@ -47,6 +47,8 @@ local blink = {
 	-- (Default) Only show the documentation popup when manually triggered
 	completion = {
 		documentation = { auto_show = false, auto_show_delay_ms = 500 },
+
+		menu = { border = vim.o.winborder },
 
 		list = {
 			selection = {
@@ -72,12 +74,12 @@ local blink = {
 	cmdline = {
 		keymap = {
 			preset = "inherit",
-
-			["<Esc>"] = {},
+			["<Tab-S>"] = { "select_prev", "fallback" },
+			["<Tab>"] = { "select_next", "fallback" },
 
 			["<C-e>"] = { "hide", "fallback" },
 
-			["<cr>"] = { "accept", "fallback" },
+			["<CR>"] = { "accept", "fallback" },
 		},
 		completion = {
 			menu = { auto_show = true },

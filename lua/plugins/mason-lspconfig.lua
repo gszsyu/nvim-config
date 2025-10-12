@@ -1,10 +1,10 @@
 require("mason-lspconfig").setup({
-	ensure_installed = { "rust_analyzer", "lua_ls", "clangd" },
+	ensure_installed = { "rust_analyzer", "lua_ls", "clangd", "tinymist" },
 })
 
 local lsp_config = vim.lsp.config
 
-vim.lsp.enable("rust_analyzer", "lua_ls", "clnagd")
+vim.lsp.enable({ "rust_analyzer", "lua_ls", "clnagd", "tinymist" }, true)
 
 lsp_config("lua_ls", {
 	on_init = function(client)
@@ -52,5 +52,13 @@ lsp_config("lua_ls", {
 	end,
 	settings = {
 		Lua = {},
+	},
+})
+
+lsp_config("tinymist", {
+	cmd = { "tinymist" },
+	filetypes = { "typst" },
+	settings = {
+		root_markers = { "main.typ" },
 	},
 })
