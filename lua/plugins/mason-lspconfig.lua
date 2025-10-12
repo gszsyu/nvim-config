@@ -1,10 +1,10 @@
 require("mason-lspconfig").setup({
-	ensure_installed = { "rust_analyzer", "lua_ls", "clangd" },
+	ensure_installed = { "rust_analyzer", "lua_ls", "clangd", "tinymist", "neocmake" },
 })
 
 local lsp_config = vim.lsp.config
 
-vim.lsp.enable("rust_analyzer", "lua_ls", "clnagd")
+vim.lsp.enable({ "rust_analyzer", "lua_ls", "clnagd", "tinymist", "neocmake" }, true)
 
 lsp_config("lua_ls", {
 	on_init = function(client)
@@ -53,4 +53,25 @@ lsp_config("lua_ls", {
 	settings = {
 		Lua = {},
 	},
+})
+
+lsp_config("tinymist", {
+	cmd = { "tinymist" },
+	filetypes = { "typst" },
+	settings = {
+		root_markers = { "main.typ" },
+	},
+})
+
+lsp_config("clangd", {
+	cmd = { "clangd" },
+	settings = {},
+})
+
+--Enable (broadcasting) snippet capability for completion
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+lsp_config("neocmake", {
+	capabilities = capabilities,
 })

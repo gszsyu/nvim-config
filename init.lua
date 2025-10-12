@@ -1,8 +1,9 @@
 vim.o.number = true
 vim.o.laststatus = 3
 vim.o.autoread = true
+vim.o.winborder = "single"
+vim.o.guifont = "JetBrainsMono Nerd Font"
 
-vim.opt.foldmethod = "indent"
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4

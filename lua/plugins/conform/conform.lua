@@ -1,12 +1,14 @@
 require("conform").setup({
 	formatters_by_ft = {
-		lua = { "stylua" },
 		-- You can customize some of the format options for the filetype (:help conform.format)
+		lua = { "stylua" },
 		rust = { "rustfmt", lsp_format = "first" },
 		markdown = { "markdown-toc", lsp_format = "first" },
+		typst = { "typst", lsp_format = "first" },
 		tombi = { "tombi", lsp_format = "fallback" },
 		fixjson = { "fixjson", lsp_format = "fallback" },
 		clang_format = { "clang_format", lsp_format = "first" },
+		cmakelang = { "cmakelang", lsp_format = "fallback" },
 	},
 	format_on_save = function(bufnr)
 		-- Disable with a global or buffer-local variable

@@ -2,6 +2,8 @@ local list = {
 	"fixjson",
 	"markdown-toc",
 	"tombi",
+	"typstyle",
+	-- 	"cmakelang",
 }
 
 local packer_path = vim.fn.stdpath("data") .. "/mason/bin/"

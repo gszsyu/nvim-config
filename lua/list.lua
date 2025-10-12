@@ -74,18 +74,24 @@ add({
 })
 
 add({
+	source = "saghen/blink.lib",
+	checkout = "main"
+})
+
+add({
 	source = "Saghen/blink.cmp",
 	checkout = "main",
+
 	hooks = {
 		post_checkout = function(params)
-			vim.system({ "cargo", "build", "--release" }, { cwd = params.path }):wait()
+    require('blink.cmp').build():wait(60000)
 		end,
 		post_install = function(params)
-			vim.system({ "cargo", "build", "--release" }, { cwd = params.path }):wait()
+    require('blink.cmp').build():wait(60000)
 		end,
 	},
 
-	depends = { "L3MON4D3/LuaSnip" },
+	depends = { "L3MON4D3/LuaSnip", "saghen/blink.lib" },
 })
 
 add({
@@ -127,14 +133,11 @@ add({
 
 add({
 	source = "nvim-tree/nvim-tree.lua",
+	depends = { "nvim-tree/nvim-web-devicons" },
 })
 
 add({
 	source = "nvim-lua/plenary.nvim",
-})
-
-add({
-	source = "nvim-tree/nvim-web-devicons",
 })
 
 add({
@@ -166,6 +169,22 @@ add({
 
 add({
 	source = "theHamsta/nvim-dap-virtual-text",
+})
+
+add({
+	source = "chomosuke/typst-preview.nvim",
+})
+
+add({
+	source = "numToStr/Comment.nvim",
+})
+
+add({
+	source = "sphamba/smear-cursor.nvim",
+})
+
+add({
+	source = "Saecki/crates.nvim",
 })
 
 require("plugins")
