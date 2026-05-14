@@ -15,10 +15,13 @@ map("n", "<C-l>", "<C-w>l", { desc = "Switch window right" })
 map("n", "<C-j>", "<C-w>j", { desc = "Switch window down" })
 map("n", "<C-k>", "<C-w>k", { desc = "Switch window up" })
 
+<<<<<<< HEAD
 map("n", "q:", ":")
 map("n", "Q", ":")
 map("v", "q:", ":")
 
+=======
+>>>>>>> 37b385c330b8200e74cd17bb0c3510017b29254c
 map(
 	"n",
 	"<leader>G",

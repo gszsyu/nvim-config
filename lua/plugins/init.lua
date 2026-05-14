@@ -21,7 +21,10 @@ require("plugins.nvim-dap.init")
 require("plugins.nvim-dap-virtual-text")
 require("plugins.typst-preview")
 require("plugins.comment")
+<<<<<<< HEAD
 require("plugins.smear-cursor")
 -- require("plugins.crates-nvim")
+=======
+>>>>>>> 37b385c330b8200e74cd17bb0c3510017b29254c
 
 -- Possible to immediately execute code which depends on the added plugin

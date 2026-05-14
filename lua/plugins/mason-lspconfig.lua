@@ -1,10 +1,18 @@
 require("mason-lspconfig").setup({
+<<<<<<< HEAD
 	ensure_installed = { "rust_analyzer", "lua_ls", "clangd", "tinymist", "neocmake" },
+=======
+	ensure_installed = { "rust_analyzer", "lua_ls", "clangd", "tinymist" },
+>>>>>>> 37b385c330b8200e74cd17bb0c3510017b29254c
 })
 
 local lsp_config = vim.lsp.config
 
+<<<<<<< HEAD
 vim.lsp.enable({ "rust_analyzer", "lua_ls", "clnagd", "tinymist", "neocmake" }, true)
+=======
+vim.lsp.enable({ "rust_analyzer", "lua_ls", "clnagd", "tinymist" }, true)
+>>>>>>> 37b385c330b8200e74cd17bb0c3510017b29254c
 
 lsp_config("lua_ls", {
 	on_init = function(client)
@@ -62,6 +70,7 @@ lsp_config("tinymist", {
 		root_markers = { "main.typ" },
 	},
 })
+<<<<<<< HEAD
 
 lsp_config("clangd", {
 	cmd = { "clangd" },
@@ -75,3 +84,5 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 lsp_config("neocmake", {
 	capabilities = capabilities,
 })
+=======
+>>>>>>> 37b385c330b8200e74cd17bb0c3510017b29254c
