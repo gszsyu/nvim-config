@@ -179,7 +179,6 @@ add({
 	source = "numToStr/Comment.nvim",
 })
 
-<<<<<<< HEAD
 add({
 	source = "sphamba/smear-cursor.nvim",
 })
@@ -188,6 +187,4 @@ add({
 	source = "Saecki/crates.nvim",
 })
 
-=======
->>>>>>> 37b385c330b8200e74cd17bb0c3510017b29254c
 require("plugins")

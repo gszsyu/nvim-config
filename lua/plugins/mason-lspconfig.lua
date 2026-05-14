@@ -1,24 +1,18 @@
 require("mason-lspconfig").setup({
-<<<<<<< HEAD
 	ensure_installed = { "rust_analyzer", "lua_ls", "clangd", "tinymist", "neocmake" },
-=======
 	ensure_installed = { "rust_analyzer", "lua_ls", "clangd", "tinymist" },
->>>>>>> 37b385c330b8200e74cd17bb0c3510017b29254c
 })
 
 local lsp_config = vim.lsp.config
 
-<<<<<<< HEAD
 vim.lsp.enable({ "rust_analyzer", "lua_ls", "clnagd", "tinymist", "neocmake" }, true)
-=======
 vim.lsp.enable({ "rust_analyzer", "lua_ls", "clnagd", "tinymist" }, true)
->>>>>>> 37b385c330b8200e74cd17bb0c3510017b29254c
 
 lsp_config("lua_ls", {
 	on_init = function(client)
 		if client.workspace_folders then
 			local path = client.workspace_folders[1].name
-			if
+							if
 				path ~= vim.fn.stdpath("config")
 				and (vim.uv.fs_stat(path .. "/.luarc.json") or vim.uv.fs_stat(path .. "/.luarc.jsonc"))
 			then
@@ -63,6 +57,7 @@ lsp_config("lua_ls", {
 	},
 })
 
+
 lsp_config("tinymist", {
 	cmd = { "tinymist" },
 	filetypes = { "typst" },
@@ -70,19 +65,15 @@ lsp_config("tinymist", {
 		root_markers = { "main.typ" },
 	},
 })
-<<<<<<< HEAD
 
 lsp_config("clangd", {
 	cmd = { "clangd" },
 	settings = {},
 })
 
---Enable (broadcasting) snippet capability for completion
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 lsp_config("neocmake", {
 	capabilities = capabilities,
 })
-=======
->>>>>>> 37b385c330b8200e74cd17bb0c3510017b29254c

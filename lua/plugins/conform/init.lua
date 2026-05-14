@@ -3,10 +3,7 @@ local list = {
 	"markdown-toc",
 	"tombi",
 	"typstyle",
-<<<<<<< HEAD
 	-- 	"cmakelang",
-=======
->>>>>>> 37b385c330b8200e74cd17bb0c3510017b29254c
 }
 
 local packer_path = vim.fn.stdpath("data") .. "/mason/bin/"
